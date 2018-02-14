@@ -1,5 +1,4 @@
-# Adapted by github.com/jnordberg from https://github.com/tensorflow/tensorflow/tree/master/tensorflow/examples/tutorials/deepdream
-# Adapted by github.com/ProGamerGov from https://github.com/jnordberg/dreamcanvas
+# Adapted from github.com/ProGamerGov
 # wget https://storage.googleapis.com/download.tensorflow.org/models/inception5h.zip
 # unzip -d model inception5h.zip
 

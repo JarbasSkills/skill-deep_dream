@@ -458,11 +458,10 @@ class DreamSkill(MycroftSkill):
             os.makedirs(self.settings["output_dir"])
 
         # private email
-        if yagmail is not None:
-            mail_config = self.config_core.get("email", {})
-            self.email = mail_config.get("email")
-            self.password = mail_config.get("password")
-            self.target_mail = mail_config.get("destinatary", self.email)
+        mail_config = self.config_core.get("email", {})
+        self.email = mail_config.get("email")
+        self.password = mail_config.get("password")
+        self.target_mail = mail_config.get("destinatary", self.email)
 
     def send(self, body):
         title = "Mycroft DeepDream Skill"

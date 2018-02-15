@@ -448,6 +448,11 @@ class DreamSkill(MycroftSkill):
         if "output_dir" not in self.settings:
             self.settings["output_dir"] = expanduser("~/dreams")
 
+        if "layers" not in self.settings:
+            self.settings["layers"] = ['conv2d2_pre_relu/conv', 'conv2d2_pre_relu',
+                        'conv2d2', 'localresponsenorm1', 'maxpool1', 'mixed3a_pool', 'mixed3a', 'mixed3b_3x3_pre_relu/conv', 'mixed3b_3x3_pre_relu', 'mixed3b_3x3', 'mixed3b_5x5_bottleneck_pre_relu/conv', 'mixed3b_5x5_bottleneck_pre_relu', 'mixed3b_5x5_bottleneck', 'mixed3b_5x5_pre_relu/conv', 'mixed3b_5x5_pre_relu', 'mixed3b_5x5', 'mixed3b_pool', 'mixed3b_pool_reduce_pre_relu/conv', 'mixed3b_pool_reduce_pre_relu', 'mixed3b_pool_reduce', 'mixed3b/concat_dim', 'mixed3b', 'maxpool4', 'mixed4a_1x1_pre_relu/conv', 'mixed4a_1x1_pre_relu', 'mixed4a_1x1', 'mixed4a_3x3_bottleneck_pre_relu/conv', 'mixed4a_3x3_bottleneck_pre_relu', 'mixed4a_3x3_bottleneck', 'mixed4a_3x3_pre_relu/conv', 'mixed4a_3x3_pre_relu', 'mixed4a_3x3', 'mixed4a_5x5_bottleneck_pre_relu/conv', 'mixed4a_5x5_bottleneck_pre_relu', 'mixed4a_5x5_bottleneck', 'mixed4a_5x5_pre_relu/conv', 'mixed4a_5x5_pre_relu', 'mixed4a_5x5', 'mixed4a_pool', 'mixed4a_pool_reduce_pre_relu/conv', 'mixed4a_pool_reduce_pre_relu', 'mixed4a_pool_reduce', 'mixed4a/concat_dim', 'mixed4a', 'mixed4b_1x1_pre_relu/conv', 'mixed4b_1x1_pre_relu', 'mixed4b_1x1', 'mixed4b_3x3_bottleneck_pre_relu/conv', 'mixed4b_3x3_bottleneck_pre_relu', 'mixed4b_3x3_bottleneck', 'mixed4b_3x3_pre_relu/conv', 'mixed4b_3x3_pre_relu', 'mixed4b_3x3', 'mixed4b_5x5_bottleneck_pre_relu/conv', 'mixed4b_5x5_bottleneck_pre_relu', 'mixed4b_5x5_bottleneck', 'mixed4b_5x5_pre_relu/conv', 'mixed4b_5x5_pre_relu', 'mixed4b_5x5', 'mixed4b_pool', 'mixed4b_pool_reduce_pre_relu/conv', 'mixed4b_pool_reduce_pre_relu', 'mixed4b_pool_reduce', 'mixed4b/concat_dim', 'mixed4b', 'mixed4c_1x1_pre_relu/conv', 'mixed4c_1x1_pre_relu', 'mixed4c_1x1', 'mixed4c_3x3_bottleneck_pre_relu/conv', 'mixed4c_3x3_bottleneck_pre_relu', 'mixed4c_3x3_bottleneck', 'mixed4c_3x3_pre_relu/conv', 'mixed4c_3x3_pre_relu', 'mixed4c_3x3', 'mixed4c_5x5_bottleneck_pre_relu/conv', 'mixed4c_5x5_bottleneck_pre_relu', 'mixed4c_5x5_bottleneck', 'mixed4c_5x5_pre_relu/conv', 'mixed4c_5x5_pre_relu', 'mixed4c_5x5', 'mixed4c_pool', 'mixed4c_pool_reduce_pre_relu/conv', 'mixed4c_pool_reduce_pre_relu', 'mixed4c_pool_reduce', 'mixed4c/concat_dim', 'mixed4c', 'mixed4d_1x1_pre_relu/conv', 'mixed4d_1x1_pre_relu', 'mixed4d_1x1', 'mixed4d_3x3_bottleneck_pre_relu/conv', 'mixed4d_3x3_bottleneck_pre_relu', 'mixed4d_3x3_bottleneck', 'mixed4d_3x3_pre_relu/conv', 'mixed4d_3x3_pre_relu', 'mixed4d_3x3', 'mixed4d_5x5_bottleneck_pre_relu/conv', 'mixed4d_5x5_bottleneck_pre_relu', 'mixed4d_5x5_bottleneck', 'mixed4d_5x5_pre_relu/conv', 'mixed4d_5x5_pre_relu', 'mixed4d_5x5', 'mixed4d_pool', 'mixed4d_pool_reduce_pre_relu/conv', 'mixed4d_pool_reduce_pre_relu', 'mixed4d_pool_reduce', 'mixed4d/concat_dim', 'mixed4d', 'mixed4e_1x1_pre_relu/conv', 'mixed4e_1x1_pre_relu', 'mixed4e_1x1', 'mixed4e_3x3_bottleneck_pre_relu/conv', 'mixed4e_3x3_bottleneck_pre_relu', 'mixed4e_3x3_bottleneck', 'mixed4e_3x3_pre_relu/conv', 'mixed4e_3x3_pre_relu', 'mixed4e_3x3', 'mixed4e_5x5_bottleneck_pre_relu/conv', 'mixed4e_5x5_bottleneck_pre_relu', 'mixed4e_5x5_bottleneck', 'mixed4e_5x5_pre_relu/conv', 'mixed4e_5x5_pre_relu', 'mixed4e_5x5', 'mixed4e_pool', 'mixed4e_pool_reduce_pre_relu/conv', 'mixed4e_pool_reduce', 'mixed4e/concat_dim', 'mixed4e', 'maxpool10', 'mixed5a_1x1_pre_relu/conv', 'mixed5a_1x1_pre_relu', 'mixed5a_1x1', 'mixed5a_3x3_bottleneck_pre_relu/conv', 'mixed5a_3x3_bottleneck_pre_relu', 'mixed5a_3x3_bottleneck', 'mixed5a_3x3_pre_relu/conv', 'mixed5a_3x3_pre_relu', 'mixed5a_3x3', 'mixed5a_5x5_bottleneck_pre_relu/conv', 'mixed5a_5x5_bottleneck_pre_relu', 'mixed5a_5x5_bottleneck', 'mixed5a_5x5_pre_relu/conv', 'mixed5a_5x5_pre_relu', 'mixed5a_5x5', 'mixed5a_pool', 'mixed5a_pool_reduce_pre_relu/conv', 'mixed5a_pool_reduce_pre_relu', 'mixed5a_pool_reduce', 'mixed5a/concat_dim', 'mixed5a', 'mixed5b_1x1_pre_relu/conv', 'mixed5b_1x1_pre_relu', 'mixed5b_1x1', 'mixed5b_3x3_bottleneck_pre_relu/conv', 'mixed5b_3x3_bottleneck_pre_relu', 'mixed5b_3x3_bottleneck', 'mixed5b_3x3_pre_relu/conv', 'mixed5b_3x3_pre_relu', 'mixed5b_3x3', 'mixed5b_5x5_bottleneck_pre_relu/conv', 'mixed5b_5x5_bottleneck_pre_relu', 'mixed5b_5x5_bottleneck', 'mixed5b_5x5_pre_relu/conv', 'mixed5b_5x5_pre_relu', 'mixed5b_5x5', 'mixed5b_pool', 'mixed5b_pool_reduce_pre_relu/conv', 'mixed5b_pool_reduce_pre_relu', 'mixed5b_pool_reduce', 'mixed5b/concat_dim', 'mixed5b', 'avgpool0', 'head0_pool', 'head0_bottleneck_pre_relu/conv', 'head0_bottleneck_pre_relu', 'head0_bottleneck', 'head0_bottleneck/reshape/shape', 'head0_bottleneck/reshape', 'nn0_pre_relu/matmul', 'nn0_pre_relu', 'nn0', 'nn0/reshape/shape', 'nn0/reshape', 'softmax0_pre_activation/matmul', 'softmax0_pre_activation', 'softmax0', 'head1_pool', 'head1_bottleneck_pre_relu/conv', 'head1_bottleneck_pre_relu', 'head1_bottleneck', 'head1_bottleneck/reshape/shape', 'head1_bottleneck/reshape', 'nn1_pre_relu/matmul', 'nn1_pre_relu', 'nn1', 'nn1/reshape/shape', 'nn1/reshape', 'softmax1_pre_activation/matmul', 'softmax1_pre_activation', 'softmax1', 'avgpool0/reshape/shape', 'avgpool0/reshape', 'softmax2_pre_activation/matmul', 'softmax2_pre_activation', 'softmax2']
+
+
         # check if folders
         if not os.path.exists(self.settings["output_dir"]):
             os.makedirs(self.settings["output_dir"])
@@ -458,7 +463,6 @@ class DreamSkill(MycroftSkill):
             self.email = mail_config.get("email")
             self.password = mail_config.get("password")
             self.target_mail = mail_config.get("destinatary", self.email)
-
 
     def send(self, body):
         title = "Mycroft DeepDream Skill"
@@ -495,32 +499,33 @@ class DreamSkill(MycroftSkill):
             self.emitter.emit(Message("speak", data))
 
     def initialize(self):
-        self.DD = DeepDreamer(self.settings["model"],
-                              self.settings["print_model"],
-                              self.settings["verbose"],
-                              self.settings["tile_size"])
         # check if model exists, if not download!
-        self.DD.maybe_download_and_extract(self.settings["model_folder"])
-
+        DeepDreamer.maybe_download_and_extract(self.settings["model_folder"])
         self.register_intent_file("dream.intent", self.handle_dream_intent)
         self.emitter.on("dream.request", self.handle_dream_request)
 
     def handle_dream_intent(self, message):
         search = message.data.get("AboutKeyword")
         data = {}
+        filepath = expanduser("~/dream_seed.jpg")
         if search:
             # collect dream entropy
             self.speak("dreaming about " + search)
             pics = self.search_pic(search)
             url = random.choice(pics)
+            urllib.urlretrieve(url, filepath)
             data["dream_name"] = search + "_" + time.asctime()
         elif self.settings["use_pexels"]:
             url = random.choice(self.popular_pic_urls())
+            req = urllib2.Request(url, None, {
+                'User-agent': 'Mozilla/5.0 (Windows; U; Windows NT 5.1; de; rv:1.9.1.5) Gecko/20091102 Firefox/3.5.5'})
+            resp = urllib2.urlopen(req)
+            content = resp.read()
+            with open(filepath, "wb") as f:
+                f.write(content)
         else:
             url = "https://unsplash.it/640/480/?random"
-
-        filepath = expanduser("~/dream_seed.jpg")
-        urllib.urlretrieve(url, filepath)
+            urllib.urlretrieve(url, filepath)
         data["dream_source"] = filepath
         self.emitter.emit(message.reply("dream.request", data))
 
@@ -537,7 +542,12 @@ class DreamSkill(MycroftSkill):
                                         self.settings["octave_value"])
         octave_scale_value = message.data.get("octave_scale_value",
                                               self.settings["octave_scale_value"])
-        filepath = self.DD.dream(output_name, seed, channel_value,
+        DD = DeepDreamer(self.settings["model"],
+                              self.settings["print_model"],
+                              self.settings["verbose"],
+                              self.settings["tile_size"])
+
+        filepath = DD.dream(output_name, seed, channel_value,
                                  layer_name, iter_value, step_size,
                                  octave_value, octave_scale_value)
         if filepath:
@@ -550,7 +560,10 @@ class DreamSkill(MycroftSkill):
                    "\nchannel: " + str(channel_value) + "\niter_num: " + str(iter_value)
             self.send(mail)
             self.emitter.emit(message.reply("dream.response", metadata))
+            self.enclosure.mouth_text(data["link"])
         else:
+            if layer_name in self.settings["layers"]:
+                self.settings["layers"].remove(layer_name)
             self.speak("I could not dream this time")
 
     ## pic search
@@ -619,7 +632,7 @@ from os.path import expanduser
 
 
 class DeepDreamer(object):
-    def __init__(self, model_path, print_model=True, verbose=True,
+    def __init__(self, model_path, print_model=False, verbose=True,
                  tile_size=512):
 
         self.model_path = model_path
@@ -642,8 +655,8 @@ class DeepDreamer(object):
         tf.import_graph_def(self.graph_def, {'input': t_preprocessed})
 
         # Optionally print the inputs and layers of the specified graph.
-        if not self.print_model:
-            LOG.info(self.graph.get_operations())
+        if self.print_model:
+            LOG.debug(self.graph.get_operations())
 
         self.last_layer = None
         self.last_grad = None
@@ -721,9 +734,9 @@ class DeepDreamer(object):
             for i in range(iter_n):
                 g = self.calc_grad_tiled(img, t_grad, self.tile_size)
                 img += g * (step / (np.abs(g).mean() + 1e-7))
-                if not self.verbose:
+                if self.verbose:
                     LOG.info("Iteration Number: %d" % i)
-            if not self.verbose:
+            if self.verbose:
                 LOG.info("Octave Number: %d" % octave)
 
         return Image.fromarray(np.uint8(np.clip(img / 255.0, 0, 1) * 255))
@@ -757,22 +770,22 @@ class DeepDreamer(object):
         self.last_layer = None
         self.last_grad = None
         self.last_channel = None
+        seed = seed or self.get_random_pic()
+        input_img = imread(seed)
+        if layer_name not in self.layers:
+            layer_name = None
+        channel_value = channel_value or random.randint(0,300)
+        layer_name = layer_name or random.choice(self.layers)
+        LOG.info(layer_name + "_" + str(channel_value))
         try:
-            seed = seed or self.get_random_pic()
-            input_img = imread(seed)
-            if layer_name not in self.layers:
-                layer_name = None
-            channel_value = channel_value or random.randint(0,100)
-            layer_name = layer_name or random.choice(self.layers)
-            LOG.info(layer_name + str(channel_value))
             output_img = self.render(input_img, layer=layer_name,
-                                 channel=channel_value,
-                                iter_n=iter_value, step=step_size, octave_n=octave_value,
-                                octave_scale=octave_scale_value)
+                             channel=channel_value,
+                            iter_n=iter_value, step=step_size, octave_n=octave_value,
+                            octave_scale=octave_scale_value)
             output_name = output_name or time.asctime().strip() +"_" + layer_name.replace("/", "")+"_"+str(channel_value)
             if ".jpg" not in output_name:
                 output_name += ".jpg"
-            LOG.info(output_name)
+            LOG.debug(output_name)
             imsave(output_name, output_img)
             return output_name
         except Exception as e:
@@ -795,7 +808,8 @@ class DeepDreamer(object):
             except Exception as e:
                 LOG.error(e)
 
-    def maybe_download_and_extract(self, model_folder):
+    @classmethod
+    def maybe_download_and_extract(cls, model_folder):
         # """Download and extract model zip file."""
         # wget https://storage.googleapis.com/download.tensorflow.org/models/inception5h.zip
         # unzip -d model inception5h.zip
@@ -815,6 +829,4 @@ class DeepDreamer(object):
             zip_ref = zipfile.ZipFile(filepath, 'r')
             zip_ref.extractall(model_folder)
             zip_ref.close()
-
-
 

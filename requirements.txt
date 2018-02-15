@@ -1,6 +1,6 @@
 numpy
 scipy
-tensorflow
+tensorflow==1.3.0
 yagmail
 imgurpython
 pypexels
